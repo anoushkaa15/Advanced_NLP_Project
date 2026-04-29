@@ -49,6 +49,15 @@ SYMPTOM_SYNONYMS = {
 ACUTE_KEYWORDS = {"acute", "infection", "viral", "dengue", "cholera", "pneumonia", "flu"}
 CHRONIC_KEYWORDS = {"chronic", "arthritis", "asthma", "diabetes", "hypertension", "psoriasis"}
 
+ACUTE_KEYWORDS = {"acute", "infection", "viral", "dengue", "cholera", "pneumonia"}
+CHRONIC_KEYWORDS = {"chronic", "arthritis", "asthma", "diabetes", "hypertension", "psoriasis"}
+
+
+@dataclass
+class SessionState:
+    user_language: str = "en"
+    turns: List[str] = field(default_factory=list)
+    clarification_rounds: int = 0
 
 @dataclass
 class SessionState:
